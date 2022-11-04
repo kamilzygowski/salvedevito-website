@@ -1,5 +1,5 @@
 import React from 'react'
-import "./dashboard.scss";
+import "./Dashboard.scss";
 import image from "../../assets/x.png"
 
 const Dashboard = () => {

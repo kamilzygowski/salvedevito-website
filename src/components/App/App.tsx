@@ -1,12 +1,13 @@
 import React from 'react';
-import Dashboard from '../Dashboard/dashboard';
+import Dashboard from '../Dashboard/Dashboard';
+import Navbar from '../Navbar/Navbar';
 //import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <Dashboard />
+      <Navbar />
     </div>
   );
 }

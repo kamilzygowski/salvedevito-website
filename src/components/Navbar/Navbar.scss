@@ -1,0 +1,23 @@
+@import "../../index.scss";
+
+.Navbar {
+    background-color: $pallete-4;
+    height: 72px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    width: 98%;
+    margin: 15px;
+    ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;  
+        li{
+            margin-inline: 20px;
+            font-size: $font-paragraph-size;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}
