@@ -1,0 +1,48 @@
+.Dropdown {
+    display: inline-block;
+    flex-direction: column;
+    .select {
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(70, 70, 70);
+        background-color: rgb(20, 20, 20);
+        color: #fff;
+        padding-block: 8px;
+        // Disable selecting text on every browser
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        .awesomeIcon {
+            margin-inline: 15px;
+            font-size: 18px;
+        }
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        text-align: center;
+        padding: 0;
+        padding-left: 0;
+        border-radius: 10px;
+        list-style: none;
+        width: 150px;
+        li {
+            padding-block: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            width:100px;
+            &:hover{
+                transition: 0.2s ease-out;
+                background-color: rgb(65, 65, 65);
+            }
+        }
+    }
+}

@@ -9,15 +9,29 @@
     border-radius: 8px;
     width: 98%;
     margin: 15px;
+    display: flex;
     ul{
-        list-style: none;
         display: flex;
         flex-direction: row;  
+        
+        > div{
+            list-style: none;
+            display: flex;
+            flex-direction: row;  
+            justify-content: space-between; 
+          
+        }
         li{
             margin-inline: 20px;
             font-size: $font-paragraph-size;
             font-weight: bold;
             cursor: pointer;
+            padding:12.5px;
+            align-self: center;
+            .awesomeIcon{
+                font-size: 20px;
+            }
         }
     }
+
 }
