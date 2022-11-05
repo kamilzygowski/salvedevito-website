@@ -11,6 +11,7 @@
         background-color: rgb(20, 20, 20);
         color: #fff;
         padding-block: 8px;
+        width:150px;
         // Disable selecting text on every browser
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -39,6 +40,7 @@
             color: #fff;
             text-align: center;
             width:100px;
+            margin-left: 25px;
             &:hover{
                 transition: 0.2s ease-out;
                 background-color: rgb(65, 65, 65);

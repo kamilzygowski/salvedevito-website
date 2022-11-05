@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Navbar.scss"
 import { useTranslation } from "react-i18next"
+import { Link } from 'react-router-dom'
 import Dropdown from '../../components/Dropdown/Dropdown'
 
 const Navbar = () => {
@@ -14,21 +15,21 @@ const Navbar = () => {
     <div className='Navbar'>
       <ul>
         <div>
-        <li>SalveDevito</li>
-        <li>{t("news-title")}</li>
-        <li>{t("download-title")}</li>
-        <li>{t("wiki-title")}</li>
-        <li>{t("highscores-title")}</li>
+        <Link className='links' to="/"> SalveDevito</Link>
+        <Link className='links' to="/news">{t("news-title")}</Link>
+        <Link className='links' to="/downloads"> {t("download-title")}</Link>
+        <Link className='links' to="/wiki"> {t("wiki-title")}</Link>
+        <Link className='links' to="/highscores"> {t("highscores-title")}</Link>
         </div>
         <div>
-        <li>{t("login-title")}</li>
-        <li>{t("register-title")}</li>
-        <li>
+        <Link className='links' to="/login"> {t("login-title")}</Link>
+        <Link className='links' to="/register"> {t("register-title")}</Link>
+        <div className='links'>
           <Dropdown
             callback={handleLanguageChange}
             options={[{ option: "English", value: "en" }, { option: "Polish", value: "pl" }]}
           />
-        </li>
+        </div>
         </div>
       </ul>
     </div>
