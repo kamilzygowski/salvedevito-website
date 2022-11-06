@@ -4,5 +4,12 @@
     "highscores-title": "Highscores",
     "wiki-title": "Wiki",
     "login-title": "Login",
-    "register-title": "Create Account"
+    "register-title": "Create Account",
+    "register-get-started": "Get started",
+    "register-terms": "I read the Salve Devito Terms of Service and I agree to the terms.",
+    "register-create-account": "Create account",
+    "register-email-input": "Email",
+    "register-password-input": "Password",
+    "register-confirmpassword-input": "Confirm Password",
+    "register-name-input": "Name"
 }

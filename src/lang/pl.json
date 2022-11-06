@@ -4,5 +4,12 @@
     "highscores-title": "Najlepsi gracze",
     "wiki-title": "Wiki",
     "login-title": "Zaloguj się",
-    "register-title": "Stwórz konto"
+    "register-title": "Stwórz konto",
+    "register-get-started": "Rozpocznij przygodę",
+    "register-terms": "Akceptuję Regulamin, żeby utworzyć i korzystać z bezpłatnego konta w serwisie SalveDevito.com.",
+    "register-create-account": "Stwórz konto",
+    "register-email-input": "Email",
+    "register-password-input": "Hasło",
+    "register-confirmpassword-input": "Powtórz Hasło",
+    "register-name-input": "Nazwa"
 }

@@ -1,0 +1,78 @@
+@import "../../index.scss";
+.Register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    img {
+        width: 220px;
+    }
+    .labelMove {
+        transform: translate(0, 0);
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .terms {
+            display: flex;
+            margin-block: 20px;
+            .checkbox {
+                width: 16px;
+            }
+            p {
+                align-self: center;
+            }
+        }
+    }
+    label {
+        color: #999999;
+        transform: translate(0, 40px);
+        transition: 0.1s ease-in;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        z-index: 0;
+    }
+    // Auto Complete doesn't create input with white background
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px #111112 inset !important;
+    }
+    input:-webkit-autofill {
+        -webkit-text-fill-color: #fff !important;
+    }
+    input {
+        margin: 10.5px;
+        width: 290px;
+        height: 44px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border: 1px solid #353535;
+        font-size: 14px;
+        padding: 0 24px;
+        max-height: 56px;
+        background-color: rgba(0, 0, 0, 0.35);
+        color: #fff;
+
+        z-index: 1;
+        &:focus {
+            outline: none;
+            border: 1px solid #000000;
+        }
+    }
+    button {
+        width: 290px;
+        height: 56px;
+        border-radius: 4px;
+        font-size: 16px;
+        border: none;
+        background-color: $pallete-4;
+    }
+}

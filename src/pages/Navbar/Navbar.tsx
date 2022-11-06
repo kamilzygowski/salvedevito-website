@@ -15,21 +15,21 @@ const Navbar = () => {
     <div className='Navbar'>
       <ul>
         <div>
-        <Link className='links' to="/"> SalveDevito</Link>
-        <Link className='links' to="/news">{t("news-title")}</Link>
-        <Link className='links' to="/downloads"> {t("download-title")}</Link>
-        <Link className='links' to="/wiki"> {t("wiki-title")}</Link>
-        <Link className='links' to="/highscores"> {t("highscores-title")}</Link>
+          <Link className='links' to="/"> SalveDevito</Link>
+          <Link className='links' to="/news">{t("news-title")}</Link>
+          <Link className='links' to="/downloads"> {t("download-title")}</Link>
+          <Link className='links' to="/wiki"> {t("wiki-title")}</Link>
+          <Link className='links' to="/highscores"> {t("highscores-title")}</Link>
         </div>
         <div>
-        <Link className='links' to="/login"> {t("login-title")}</Link>
-        <Link className='links' to="/register"> {t("register-title")}</Link>
-        <div className='links'>
-          <Dropdown
-            callback={handleLanguageChange}
-            options={[{ option: "English", value: "en" }, { option: "Polish", value: "pl" }]}
-          />
-        </div>
+          <Link className='links' to="/login"> {t("login-title")}</Link>
+          <Link className='links' to="/register"> {t("register-title")}</Link>
+          <span className='links'>
+            <Dropdown
+              callback={handleLanguageChange}
+              options={[{ option: "English", value: "en" }, { option: "Polish", value: "pl" }]}
+            />
+          </span>
         </div>
       </ul>
     </div>

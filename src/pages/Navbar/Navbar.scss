@@ -11,12 +11,17 @@
     margin: 15px;
     display: flex;
     ul{
+        width: inherit;
         display: flex;
         flex-direction: row;    
+        justify-content: space-between;
         > div{
             list-style: none;
             display: flex;
             flex-direction: row;  
+            &:last-of-type{
+            
+            }
         }
         .links{
             margin-inline: 20px;

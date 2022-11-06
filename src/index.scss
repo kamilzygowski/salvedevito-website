@@ -1,9 +1,12 @@
-$pallete-1: #1A1A1B;
-$pallete-2: #333F44;
-$pallete-3: #37AA9C;
-$pallete-4: #94F3E4;
-$font-primary: 'David Libre', serif;
-$font-secondary:'Viaoda Libre', cursive;
+$pallete-1: #1a1a1b;
+$pallete-2: #333f44;
+$pallete-3: #37aa9c;
+$pallete-4: #94f3e4;
+$font-primary: "David Libre", serif;
+// 'Grenze', serif;
+ //'Trykker', serif
+ 
+$font-secondary: "Viaoda Libre", cursive;
 $font-header-size: 20px;
 $font-paragraph-size: 16px;
 
@@ -17,6 +20,22 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+img {
+  // Disable selecting images
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  // Disable dragging images
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  //@ts-ignore
+  user-drag: none;
 }
