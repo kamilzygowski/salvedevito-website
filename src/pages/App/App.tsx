@@ -3,7 +3,7 @@ import Dashboard from '../Dashboard/Dashboard';
 import Navbar from '../Navbar/Navbar';
 //import logo from './logo.svg';
 import './App.scss';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { HashRouter as Router, Route, Switch } from "react-router-dom"
 import News from '../News/News';
 import Downloads from '../Downloads/Downloads';
 import Register from '../Register/Register';

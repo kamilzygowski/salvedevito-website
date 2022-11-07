@@ -7,11 +7,11 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        border: 1px solid rgb(70, 70, 70);
-        background-color: rgb(20, 20, 20);
+        //border: 1px solid rgb(70, 70, 70);
+        //background-color: rgb(20, 20, 20);
         color: #fff;
         padding-block: 8px;
-        width:150px;
+        padding-inline: 10px;
         // Disable selecting text on every browser
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -20,7 +20,7 @@
         -ms-user-select: none;
         user-select: none;
         .awesomeIcon {
-            margin-inline: 15px;
+            margin-inline: 5px;
             font-size: 18px;
         }
     }
@@ -31,6 +31,8 @@
         text-align: center;
         padding: 0;
         padding-left: 0;
+        margin-left: -50px;
+        margin-top: 19px;
         border-radius: 10px;
         list-style: none;
         width: 150px;

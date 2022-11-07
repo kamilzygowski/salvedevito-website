@@ -6,7 +6,7 @@ const Dashboard = () => {
   return (
     <div className="Dashboard">
         Dashboard
-        <img src={image} alt="xd"/>
+        
     </div>
   )
 }

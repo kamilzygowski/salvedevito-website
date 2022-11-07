@@ -16,6 +16,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: navy;
   font-family: $font-primary;
+  background: url("./assets/backgroundEdges2.webp");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position:center top;
   background-color: $pallete-1;
 }
 

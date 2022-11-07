@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import "./Dropdown.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEarthEurope, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faGlobe, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
     options: { option: string, value: string }[]
     callback: (e: any) => void
+    arrowIcon: boolean
+    worldIcon: boolean
+    showText: boolean
 }
-const Dropdown = ({ callback, options }: Props) => {
+const Dropdown = ({ callback, options, arrowIcon, worldIcon, showText }: Props) => {
     const translateLocaleToLanguageName = (lng: string | null) => {
         switch (lng) {
             case "en": return "English"
@@ -21,20 +24,19 @@ const Dropdown = ({ callback, options }: Props) => {
         setOpen(!isOpened)
         setSelected(e.target.textContent)
     }
+  
     return (
-        <div className='Dropdown'>
-            <div className='select' onClick={() => setOpen(!isOpened)}>
-                <FontAwesomeIcon icon={faEarthEurope} className="awesomeIcon" />
-                {selected}
-                {isOpened ? <FontAwesomeIcon icon={faChevronUp} className="awesomeIcon" /> : <FontAwesomeIcon icon={faChevronDown} className="awesomeIcon" />}
+        <div className='Dropdown' >
+            <div className='select' onMouseEnter={()=> {setOpen(true)}} onMouseLeave={()=> {setTimeout(() => {setOpen(false)}, 3000)}}>
+                {worldIcon ? <FontAwesomeIcon icon={faGlobe} className="awesomeIcon" /> : null}
+                {showText ? selected : null}
+                {isOpened ? arrowIcon ? <FontAwesomeIcon icon={faChevronUp} className="awesomeIcon" />  : null: arrowIcon ? <FontAwesomeIcon icon={faChevronDown} className="awesomeIcon" /> : null}
             </div>
             {isOpened ?
-                <ul>
+                <ul onMouseEnter={()=> {setOpen(true)}} onMouseLeave={()=> {setOpen(false)}}>
                     {options.map((element: any, index: number) => {
                         return <li key={index} title={element.value} onClick={(e: any) => { handleOptionClick(e); callback(e) }}>{element.option}</li>
                     })}
-
-
                 </ul>
                 : null}
         </div>
