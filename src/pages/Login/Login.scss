@@ -1,15 +1,20 @@
 @import "../../index.scss";
-.Register {
+.Login {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 130px;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 5px;
     padding: 35px;
     width: 785px;
+    /*top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin: auto;*/
     img {
         width: 220px;
     }
@@ -71,7 +76,7 @@
             outline: none;
             border: 1px solid #000000;
         }
-        &:last-of-type{
+        &:last-of-type {
             margin-bottom: 50px;
         }
     }
