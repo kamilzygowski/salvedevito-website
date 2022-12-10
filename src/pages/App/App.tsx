@@ -7,6 +7,8 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom"
 import News from '../News/News';
 import Downloads from '../Downloads/Downloads';
 import Register from '../Register/Register';
+import Login from '../Login/Login';
+import Account from '../Account/Account';
 function App() {
   return (
     <Router>
@@ -29,10 +31,14 @@ function App() {
 
           </Route>
           <Route exact path="/login">
-
+            <Login />
           </Route>
           <Route exact path="/register">
             <Register />
+          </Route>
+
+          <Route exact path="/account" >
+            <Account />
           </Route>
         </Switch>
       </div>

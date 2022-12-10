@@ -11,5 +11,6 @@
     "register-email-input": "Email",
     "register-password-input": "Hasło",
     "register-confirmpassword-input": "Powtórz Hasło",
-    "register-name-input": "Nazwa"
+    "register-name-input": "Nazwa",
+    "login-button": "Zaloguj"
 }

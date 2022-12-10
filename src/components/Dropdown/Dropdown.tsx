@@ -27,18 +27,18 @@ const Dropdown = ({ callback, options, arrowIcon, worldIcon, showText }: Props) 
   
     return (
         <div className='Dropdown' >
-            <div className='select' onMouseEnter={()=> {setOpen(true)}} onMouseLeave={()=> {setTimeout(() => {setOpen(false)}, 3000)}}>
+            <div className='select'>
                 {worldIcon ? <FontAwesomeIcon icon={faGlobe} className="awesomeIcon" /> : null}
                 {showText ? selected : null}
                 {isOpened ? arrowIcon ? <FontAwesomeIcon icon={faChevronUp} className="awesomeIcon" />  : null: arrowIcon ? <FontAwesomeIcon icon={faChevronDown} className="awesomeIcon" /> : null}
             </div>
-            {isOpened ?
+            
                 <ul onMouseEnter={()=> {setOpen(true)}} onMouseLeave={()=> {setOpen(false)}}>
                     {options.map((element: any, index: number) => {
                         return <li key={index} title={element.value} onClick={(e: any) => { handleOptionClick(e); callback(e) }}>{element.option}</li>
                     })}
                 </ul>
-                : null}
+                
         </div>
     )
 }

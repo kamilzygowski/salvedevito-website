@@ -16,11 +16,11 @@ const Navbar = () => {
     <div className='Navbar'>
       <ul>
         <div>
-          <Link className='links' to="/"> SalveDevito</Link>
-          <Link className='links' to="/news">{t("news-title")}</Link>
-          <Link className='links' to="/downloads"> {t("download-title")}</Link>
-          <Link className='links' to="/wiki"> {t("wiki-title")}</Link>
-          <Link className='links' to="/highscores"> {t("highscores-title")}</Link>
+          <Link className='links' to="/"><div>SalveDevito</div></Link>
+          <Link className='links' to="/news"><div>{t("news-title")}</div></Link>
+          <Link className='links' to="/downloads"><div>{t("download-title")}</div></Link>
+          <Link className='links' to="/wiki"><div>{t("wiki-title")}</div></Link>
+          <Link className='links' to="/highscores"><div>{t("highscores-title")}</div></Link>
         </div>
         <div>
           <span className='lang'>

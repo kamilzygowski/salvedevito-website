@@ -10,8 +10,8 @@
         //border: 1px solid rgb(70, 70, 70);
         //background-color: rgb(20, 20, 20);
         color: #fff;
-        padding-block: 8px;
-        padding-inline: 10px;
+        padding-block: 26px;
+        padding-inline: 21px;
         // Disable selecting text on every browser
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -19,31 +19,41 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+        &:hover + ul {
+            display: flex;
+        }
         .awesomeIcon {
             margin-inline: 5px;
             font-size: 18px;
         }
+        &:hover{
+            color:aquamarine;
+            transition: 0.2s ease-out;
+        }
     }
     ul {
-        display: flex;
+        display: none;
         flex-direction: column;
         position: absolute;
         text-align: center;
         padding: 0;
         padding-left: 0;
-        margin-left: -50px;
-        margin-top: 19px;
+        margin-left: -40px;
+      
         border-radius: 10px;
         list-style: none;
         width: 150px;
+        &:hover {
+            display: flex;
+        }
         li {
             padding-block: 10px;
             background-color: rgba(0, 0, 0, 0.8);
             color: #fff;
             text-align: center;
-            width:100px;
+            width: 100px;
             margin-left: 25px;
-            &:hover{
+            &:hover {
                 transition: 0.2s ease-out;
                 background-color: rgb(65, 65, 65);
             }

@@ -11,5 +11,6 @@
     "register-email-input": "Email",
     "register-password-input": "Password",
     "register-confirmpassword-input": "Confirm Password",
-    "register-name-input": "Name"
+    "register-name-input": "Name",
+    "login-button":"Login"
 }
