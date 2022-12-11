@@ -3,9 +3,12 @@ import "./LogoutScreen.scss"
 import { Rings } from "react-loader-spinner"
 import axios from "axios"
 import { useHistory } from 'react-router'
+import Success from '../../components/Success/Success'
+import Failure from '../../components/Failure/Failure'
 
 const LogoutScreen = () => {
     const [isLoading, setLoading] = useState<boolean>(true)
+    const [success, setSuccess] = useState<boolean>(false)
     const history = useHistory()
     const logout_request = async () => {
         const request = axios.post(`${process.env.REACT_APP_API_URL}/logout`, {},
@@ -22,6 +25,7 @@ const LogoutScreen = () => {
             const result = await logout_request()
             console.log(result)
             if (result.status === 200 || result.status === 401) {
+                setSuccess(true)
                 setLoading(false)
                 setTimeout(() => {
                     history.push("/")
@@ -45,8 +49,7 @@ const LogoutScreen = () => {
                 wrapperStyle={{ marginTop: '200px', position: 'absolute', left: '0', right: '0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             /> :
                 <div className="logoutScreenWrapper">
-                    <h2>Success</h2>
-                    <p>You logged out successfuly</p>
+                    {success ? <Success message='You logged out successfuly'/> : <Failure message='You logged out successfuly'/>}
                 </div>}
         </div>
     )
