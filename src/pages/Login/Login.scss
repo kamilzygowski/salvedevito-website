@@ -9,7 +9,7 @@
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 15px;
     padding: 35px;
-    width: 495px;
+    width: 365px;
     h1{
         margin-top: 0;
     }
@@ -91,5 +91,12 @@
         background-color: $pallete-4;
         font-weight: bold;
         margin-block: 20px;
+        border-radius: 115px;
+        &:hover{
+            cursor: pointer;
+            transition: 300ms;
+            background-color: rgb(7, 189, 1);
+            color:#fff;
+        }
     }
 }

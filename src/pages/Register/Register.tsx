@@ -86,7 +86,7 @@ const Register = () => {
         const response: any = await register_request()
         if (response.status === 200 || response.status === 201) {
           resetInputs()
-          setError("")
+          setError("success")
           setLoading(false)
         }
       }
@@ -124,13 +124,14 @@ const Register = () => {
           <input ref={confirmPasswordInput} type="password" onSelect={onInputSelect} id="2" onChange={(val: any) => setConfirmPassword(val.target.value)} autoComplete="none" autoCorrect='off' />
           <label ref={label3}><span>{t("register-name-input")}</span></label>
           <input ref={nameInput} type="text" onSelect={onInputSelect} id="3" onChange={(val: any) => setName(val.target.value)} autoComplete="none" autoCorrect='off' />
-          {error !== "" ? <div className='error'>{error}</div> : null}
+          {error !== "" && error !== "success" ? <div className='error'>{error}</div> : null}
+          {error === "success" ? <div className='success'>Account created successfuly</div> : null}
           <div className='terms'>
             <input type="checkbox" className='checkbox' onChange={val => setTerms(val.target.checked)} />
             <p>{t("register-terms")}</p>
           </div>
           <button type="submit">
-            {t("register-create-account")}
+            {t("register-create-account").toLowerCase()}
           </button>
         </form>}
     </div>

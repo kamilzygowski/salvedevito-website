@@ -3,6 +3,16 @@
     display: flex;
     margin-top: 35px;
     color: #fff;
+    .eq{
+        margin-left: 45px;;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.65);
+        padding-block: 15px;
+        padding-inline: 15px;
+        img{
+            width: 240px;
+        }
+    }
     .AccountWrapper {
         width: 100%;
         display: flex;
@@ -10,7 +20,6 @@
         justify-content: center;
         align-items: center;
         .settings {
-            margin-right: 35px;
             width: 300px;
             border-radius: 10px;
             padding: 25px;
@@ -58,7 +67,7 @@
         }
         .informations {
             margin-left: 35px;
-            width: 700px;
+            width: 425px;
             height: 700px;
             border-radius: 10px;
             display: flex;
@@ -77,7 +86,7 @@
             .infoWrapper {
                 background: rgba(0, 0, 0, 0.75);
                 padding: 10px;
-                width: 525px;
+                width: 405px;
                 border-radius: 15px;
                 &:last-of-type {
                     margin-top: 15px;

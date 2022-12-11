@@ -32,8 +32,8 @@ const LogoutScreen = () => {
                 setSuccess(true)
                 setLoading(false)
                 setTimeout(() => {
-                    history.push("/")
-                }, 2500)
+                    history.push("/login")
+                }, 1500)
             }
         } catch (error) {
             console.warn(error)
