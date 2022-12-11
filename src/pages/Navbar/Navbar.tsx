@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Navbar.scss"
 import "./StartButton.scss"
 import { useTranslation } from "react-i18next"
@@ -7,11 +7,20 @@ import Dropdown from '../../components/Dropdown/Dropdown'
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const [isLoggedIn, setLoggedIn] = useState<boolean>(false)
   const handleLanguageChange = (e: any) => {
     const lng: string = e.target.title
     i18n.changeLanguage(lng)
     localStorage.setItem("lng", lng)
   }
+  useEffect(() => {
+    if(localStorage.getItem("userId") !== null || localStorage.getItem("userId") !== ""){
+      setLoggedIn(true)
+    }else {
+      setLoggedIn(false)
+      console.log(localStorage.getItem("userId"))
+    }
+  })
   return (
     <div className='Navbar'>
       <ul>
@@ -32,7 +41,9 @@ const Navbar = () => {
               showText={false}
             />
           </span>
+          {isLoggedIn ?  
           <Link className='links' to="/login"> {t("login-title")}</Link>
+          :<Link className='links' to="/login"> {t("account-title")}</Link>}
           <Link className='links' to="/register"> {t("register-title")}</Link>
           <div className="buttons">
             <button className="blob-btn">

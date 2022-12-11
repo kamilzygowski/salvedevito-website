@@ -1,0 +1,17 @@
+.LogoutScreen {
+    .logoutScreenWrapper {
+        margin-top: 135px;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 40px;
+        padding-inline: 75px;
+        color: #fff;
+        border-radius: 50px;
+        p {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+    }
+}

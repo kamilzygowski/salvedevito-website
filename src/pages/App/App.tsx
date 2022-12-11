@@ -9,6 +9,7 @@ import Downloads from '../Downloads/Downloads';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Account from '../Account/Account';
+import LogoutScreen from '../LogoutScreen/LogoutScreen';
 function App() {
   return (
     <Router>
@@ -39,6 +40,9 @@ function App() {
 
           <Route exact path="/account" >
             <Account />
+          </Route>
+          <Route exact path="/logoutscreen" >
+            <LogoutScreen />
           </Route>
         </Switch>
       </div>

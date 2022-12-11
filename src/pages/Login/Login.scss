@@ -7,9 +7,9 @@
     margin-top: 130px;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.75);
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 35px;
-    width: 785px;
+    width: 495px;
     /*top:0;
     left:0;
     right:0;
@@ -20,6 +20,10 @@
     }
     .labelMove {
         transform: translate(0, 0);
+    }
+    .error{
+        color: red;
+        margin-bottom: 15px;
     }
     form {
         display: flex;

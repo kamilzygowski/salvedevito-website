@@ -25,16 +25,12 @@
     cursor: pointer;
     
     &:before {
-
       z-index: 1;
       position: absolute;
       left: 0;
       top: 0;
-
       width: 100%;
       height: 100%;
-      //border: $borderW solid #fff;
-
     }
     
     &:after {

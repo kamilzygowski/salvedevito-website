@@ -1,3 +1,117 @@
-.Account{
-    
+.Account {
+    width: 100%;
+    display: flex;
+    margin-top: 35px;
+    color: #fff;
+    .AccountWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .settings {
+            margin-right: 35px;
+            width: 300px;
+            border-radius: 10px;
+            padding: 25px;
+            .settingsTitle {
+                font-weight: bold;
+                font-size: 20px;
+                text-shadow: 1px 1px 20px #000000;
+                border-radius: 50px;
+                padding-block: 10px;
+            }
+            .settingsList {
+                padding-left: 0;
+                list-style: none;
+                display: flex;
+                list-style-type: none;
+                flex-direction: column;
+                border-radius: 10px;
+                font-size: 17px;
+                .settingsLinks {
+                    text-decoration: none;
+                    margin-block: 5px;
+                    padding-block: 20px;
+                    text-align: center;
+                    width: 300px;
+                    border-radius: 10px;
+                    background: rgba(0, 0, 0, 0.85);
+                    border: 1px solid rgba(0, 0, 0, 0.75);
+                    color: #fff;
+                    display: flex;
+                    flex-direction: row;
+                    p {
+                        margin: 0;
+                        width: 100%;
+                        text-align: center;
+                    }
+                    .icon {
+                        margin-left: 25px;
+                    }
+                    &:hover {
+                        transition: 0.3s;
+                        background-color: rgba(255, 255, 255, 0.05);
+                    }
+                }
+            }
+        }
+        .informations {
+            margin-left: 35px;
+            width: 700px;
+            height: 700px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+            .mainHeader {
+                margin-block: 45px;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            .title {
+                margin-block: 10px;
+                font-size: 20px;
+            }
+            .infoWrapper {
+                background: rgba(0, 0, 0, 0.75);
+                padding: 10px;
+                width: 525px;
+                border-radius: 15px;
+                &:last-of-type {
+                    margin-top: 15px;
+                }
+            }
+            .lists {
+                list-style: none;
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-left: 0;
+                li {
+                    display: flex;
+                    flex-direction: row;
+                }
+                .leftRow {
+                    width: 145px;
+                    padding: 10px;
+                    margin: 5px;
+                }
+                .rightRow {
+                    padding: 10px;
+                    width: 145px;
+                    padding-inline: 25px;
+                    margin: 7.5px;
+                }
+                .light {
+                    background: rgba(255, 255, 255, 0.15);
+                }
+                .dark {
+                    background: rgba(0, 0, 0, 0.85);
+                }
+            }
+        }
+    }
 }
