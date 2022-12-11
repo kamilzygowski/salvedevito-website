@@ -6,7 +6,7 @@
     "login-title": "Login",
     "account-title": "My Account",
     "register-title": "Create Account",
-    "register-get-started": "Get started",
+    "register-get-started": "Create account",
     "register-terms": "I read the Salve Devito Terms of Service and I agree to the terms.",
     "register-create-account": "Create account",
     "register-email-input": "Email",
@@ -31,5 +31,6 @@
     "active-class": "Active class",
     "arena-ranking": "Arena ranking",
     "guild": "Guild",
-    "none": "None"
+    "none": "None",
+    "login": "Log in"
 }

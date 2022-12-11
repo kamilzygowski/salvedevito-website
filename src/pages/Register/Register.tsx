@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import './Register.scss'
 import logo from "../../assets/logo.png"
 import { useTranslation } from "react-i18next"
+import axios from 'axios'
+import { Rings } from 'react-loader-spinner'
 
 const Register = () => {
   const { t } = useTranslation()
@@ -14,6 +16,9 @@ const Register = () => {
   const [password, setPassword] = useState<string>("")
   const [confirmPassword, setConfirmPassword] = useState<string>("")
   const [name, setName] = useState<string>("")
+  const [terms, setTerms] = useState<boolean>(false)
+  const [error, setError] = useState<string>("")
+  const [isLoading, setLoading] = useState<boolean>(false)
   const emailInput = useRef(null)
   const passwordInput = useRef(null)
   const confirmPasswordInput = useRef(null)
@@ -38,30 +43,96 @@ const Register = () => {
 
     }
   }
+  const resetInputs = () => {
+    setName("")
+    setPassword("")
+    setConfirmPassword("")
+    setName("")
+    setTerms(false)
+  }
+  const register_request = async () => {
+    const request = axios.post(`${process.env.REACT_APP_API_URL}/register`, {
+      "email": email,
+      "password": password,
+      "name": name
+    },
+      {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('@token')}`
+        }
+      }).then(res => { return res })
+    return request
+  }
+  const handleRegister = async () => {
+    if (password !== confirmPassword) {
+      setError('Password and repeat password are not the same')
+      return
+    }
+    if (email.length < 4) {
+      setError("Email is too short")
+      return
+    } else if (password.length < 3) {
+      setError("Password is too short")
+      return
+    } else if (name.length < 4) {
+      setError("Name is too short")
+      return
+    } else if (!terms) {
+      setError("You have to read and accept the terms of service")
+      return
+    } else {
+      setLoading(true)
+      try {
+        const response: any = await register_request()
+        if (response.status === 200 || response.status === 201) {
+          resetInputs()
+          setError("")
+          setLoading(false)
+        }
+      }
+      catch (err: any) {
+        console.warn(err)
+        setError(err.response.data.message)
+        setLoading(false)
+      }
+
+    }
+  }
+
   window.addEventListener('click', (event: MouseEvent) => {
     onInputSelect(event)
   });
   return (
     <div className='Register' id='-1' onClick={onInputSelect}>
-      <img src={logo} alt="" />
-      {/*<h1>{t("register-get-started")}</h1>*/}
-      <form autoComplete='off'>
-        <label ref={label0}><span>{t("register-email-input")}</span></label>
-        <input ref={emailInput} type="email" onSelect={onInputSelect} id="0" onChange={(val: any) => setEmail(val)} autoComplete="none" autoCorrect='off'/>
-        <label ref={label1}><span>{t("register-password-input")}</span></label>
-        <input ref={passwordInput} type="password" onSelect={onInputSelect} id="1" onChange={(val: any) => setPassword(val)} autoComplete="none" autoCorrect='off'/>
-        <label ref={label2}><span>{t("register-confirmpassword-input")}</span></label>
-        <input ref={confirmPasswordInput} type="password" onSelect={onInputSelect} id="2" onChange={(val: any) => setConfirmPassword(val)} autoComplete="none" autoCorrect='off'/>
-        <label ref={label3}><span>{t("register-name-input")}</span></label>
-        <input ref={nameInput} type="text" onSelect={onInputSelect} id="3" onChange={(val: any) => setName(val)} autoComplete="none" autoCorrect='off'/>
-        <div className='terms'>
-          <input type="checkbox" className='checkbox' />
-          <p>{t("register-terms")}</p>
-        </div>
-        <button type="submit">
-          {t("register-create-account")}
-        </button>
-      </form>
+      {isLoading ? <Rings
+        height='200'
+        width='200'
+        radius='1'
+        color='#f1f2f6'
+        ariaLabel='loading'
+        wrapperClass='loading'
+        wrapperStyle={{ width: '100%', marginTop: '200px', position: 'absolute', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      /> :
+        <form autoComplete='off' onSubmit={handleRegister}>
+          <img src={logo} alt="" />
+          <h1>{t("register-get-started")}</h1>
+          <label ref={label0}><span>{t("register-email-input")}</span></label>
+          <input ref={emailInput} type="email" onSelect={onInputSelect} id="0" onChange={(val: any) => setEmail(val.target.value)} autoComplete="none" autoCorrect='off' />
+          <label ref={label1}><span>{t("register-password-input")}</span></label>
+          <input ref={passwordInput} type="password" onSelect={onInputSelect} id="1" onChange={(val: any) => setPassword(val.target.value)} autoComplete="none" autoCorrect='off' />
+          <label ref={label2}><span>{t("register-confirmpassword-input")}</span></label>
+          <input ref={confirmPasswordInput} type="password" onSelect={onInputSelect} id="2" onChange={(val: any) => setConfirmPassword(val.target.value)} autoComplete="none" autoCorrect='off' />
+          <label ref={label3}><span>{t("register-name-input")}</span></label>
+          <input ref={nameInput} type="text" onSelect={onInputSelect} id="3" onChange={(val: any) => setName(val.target.value)} autoComplete="none" autoCorrect='off' />
+          {error !== "" ? <div className='error'>{error}</div> : null}
+          <div className='terms'>
+            <input type="checkbox" className='checkbox' onChange={val => setTerms(val.target.checked)} />
+            <p>{t("register-terms")}</p>
+          </div>
+          <button type="submit">
+            {t("register-create-account")}
+          </button>
+        </form>}
     </div>
   )
 }

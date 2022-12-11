@@ -6,7 +6,7 @@
     "login-title": "Zaloguj się",
     "account-title": "Moje konto",
     "register-title": "Stwórz konto",
-    "register-get-started": "Rozpocznij przygodę",
+    "register-get-started": "Załóż konto",
     "register-terms": "Akceptuję Regulamin, żeby utworzyć i korzystać z bezpłatnego konta w serwisie SalveDevito.com.",
     "register-create-account": "Stwórz konto",
     "register-email-input": "Email",
@@ -31,5 +31,6 @@
     "active-class": "Aktywna klasa",
     "arena-ranking": "Arena ranking",
     "guild": "Gildia",
-    "none": "Brak"
+    "none": "Brak",
+    "login": "Zaloguj się"
 }

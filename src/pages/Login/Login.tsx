@@ -91,6 +91,7 @@ const Login = () => {
 
         <form autoComplete='off' onSubmit={handleLogin}>
           <img src={logo} alt="" />
+          <h2>{t("login")}</h2>
           <label ref={label0}><span>{t("register-email-input")}</span></label>
           <input ref={emailInput} type="email" onSelect={onInputSelect} id="0" onChange={(val: any) => setEmail(val.target.value)} autoComplete="none" autoCorrect='off' />
           <label ref={label1}><span>{t("register-password-input")}</span></label>

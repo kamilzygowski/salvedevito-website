@@ -25,7 +25,7 @@ const LogoutScreen = () => {
                 setLoading(false)
                 setTimeout(() => {
                     history.push("/")
-                }, 4500)
+                }, 2500)
             }
         } catch (error) {
             console.warn(error)
