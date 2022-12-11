@@ -4,9 +4,12 @@ import "./StartButton.scss"
 import { useTranslation } from "react-i18next"
 import { Link } from 'react-router-dom'
 import Dropdown from '../../components/Dropdown/Dropdown'
-
+import UserContext from '../../UserContext'
+import { useContext } from 'react'
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const user = useContext(UserContext)
+  console.log(user)
   const [isLoggedIn, setLoggedIn] = useState<boolean>(false)
   const handleLanguageChange = (e: any) => {
     const lng: string = e.target.title
@@ -14,11 +17,10 @@ const Navbar = () => {
     localStorage.setItem("lng", lng)
   }
   useEffect(() => {
-    if(localStorage.getItem("userId") !== null || localStorage.getItem("userId") !== ""){
+    if (user.isLoggedIn) {
       setLoggedIn(true)
-    }else {
+    } else {
       setLoggedIn(false)
-      console.log(localStorage.getItem("userId"))
     }
   })
   return (
@@ -41,9 +43,10 @@ const Navbar = () => {
               showText={false}
             />
           </span>
-          {isLoggedIn ?  
-          <Link className='links' to="/login"> {t("login-title")}</Link>
-          :<Link className='links' to="/login"> {t("account-title")}</Link>}
+          {!user.isLoggedIn ?
+            <Link className='links' to="/login"> {t("login-title")}</Link>
+            : <Link className='links' to="/account"> {t("account-title")}</Link>
+          }
           <Link className='links' to="/register"> {t("register-title")}</Link>
           <div className="buttons">
             <button className="blob-btn">
@@ -58,7 +61,6 @@ const Navbar = () => {
               </span>
             </button>
           </div>
-
         </div>
       </ul>
     </div>

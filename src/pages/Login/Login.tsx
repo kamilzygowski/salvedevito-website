@@ -51,23 +51,23 @@ const Login = () => {
       .then(response => {
         return response
       })
-      return request
+    return request
   }
-  const handleLogin = async() => {
-    try{
-    setLoading(true);
-    const request = await login_request()
-    if(request.status === 200){
-      localStorage.setItem("@token", request.data.access_token)
-      localStorage.setItem("@refresh", request.data.refresh_token)
-      localStorage.setItem("userId", request.data.id)
-      history.push('/account')
-    }else {
-      setLoading(false)
-      console.log(request.data)
+  const handleLogin = async () => {
+    try {
+      setLoading(true);
+      const request = await login_request()
+      if (request.status === 200) {
+        localStorage.setItem("@token", request.data.access_token)
+        localStorage.setItem("@refresh", request.data.refresh_token)
+        localStorage.setItem("userId", request.data.id)
+        history.push('/account')
+      } else {
+        setLoading(false)
+        console.log(request.data)
+      }
     }
-    }
-    catch(err:any){
+    catch (err: any) {
 
       setError(err.response.data.message)
       setLoading(false)
@@ -78,7 +78,6 @@ const Login = () => {
   });
   return (
     <div className={isLoading ? 'LoginOff' : 'Login'} id='-1' onClick={onInputSelect}>
-      {/*<h1>{t("register-get-started")}</h1>*/}
       {isLoading ? <Rings
         height='200'
         width='200'
@@ -91,7 +90,7 @@ const Login = () => {
 
         <form autoComplete='off' onSubmit={handleLogin}>
           <img src={logo} alt="" />
-          <h2>{t("login")}</h2>
+          <h1>{t("login")}</h1>
           <label ref={label0}><span>{t("register-email-input")}</span></label>
           <input ref={emailInput} type="email" onSelect={onInputSelect} id="0" onChange={(val: any) => setEmail(val.target.value)} autoComplete="none" autoCorrect='off' />
           <label ref={label1}><span>{t("register-password-input")}</span></label>
@@ -102,7 +101,6 @@ const Login = () => {
           </button>
         </form>
       }
-
     </div>
   )
 }

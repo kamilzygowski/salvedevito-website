@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faTrashCan, faKey, faFileText, faPersonWalkingArrowRight, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { useContext } from 'react'
+import UserContext from '../../UserContext'
 
 interface User{
   email: string;
@@ -14,8 +16,8 @@ interface User{
 }
 const Account = () => {
   const { t, i18n } = useTranslation();
+  const { setUser, name, email, id, isLoggedIn } = useContext(UserContext)
   const [isLoading, setLoading] = useState<boolean>(true)
-  const [user, setUser] = useState<User>()
   const get_user = () => {
     const request = axios.get(`${process.env.REACT_APP_API_URL}/user/${localStorage.getItem('userId')}`,
       {
@@ -27,11 +29,9 @@ const Account = () => {
   }
   const prepareUserInfo = async () => {
     const user = await get_user()
-    console.log(user)
-    setUser(user.data)
     localStorage.setItem("user", JSON.stringify(user.data))
+    setUser(user.data.name, user.data.email, user.data.id, true)
     setLoading(false)
-    console.log(localStorage)
   }
   useEffect(() => {
     prepareUserInfo()
@@ -63,14 +63,14 @@ const Account = () => {
           <div className='infoWrapper'>
           <p className='title'>{t("generalinfo-title")}</p>
           <ul className='lists'>
-            <li><p className='leftRow dark'>{t("emailaddress")}</p><p className='rightRow light'>{user?.email}</p></li>
+            <li><p className='leftRow dark'>{t("emailaddress")}</p><p className='rightRow light'>{email}</p></li>
             <li><p className='leftRow light'>{t("createdat")}</p><p className='rightRow dark'>09.07.2022</p></li>
           </ul>
             </div>
         <div className='infoWrapper'>
         <p className='title'>{t("characterinfo-title")}</p>
           <ul className='lists'>
-            <li><p className='leftRow dark'>{t("name")}</p><p className='rightRow light'>{user?.name}</p></li>
+            <li><p className='leftRow dark'>{t("name")}</p><p className='rightRow light'>{name}</p></li>
             <li><p className='leftRow light'>{t("level")}</p><p className='rightRow dark'>15</p></li>
             <li><p className='leftRow dark'>{t("active-class")}</p><p className='rightRow light'>Hunter</p></li>
             <li><p className='leftRow light'>{t("arena-ranking")}</p><p className='rightRow dark'>1950</p></li>

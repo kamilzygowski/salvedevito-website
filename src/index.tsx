@@ -4,7 +4,6 @@ import './index.scss';
 import App from './pages/App/App';
 import reportWebVitals from './reportWebVitals';
 import "./vendor/i18next";
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
