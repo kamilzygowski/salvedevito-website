@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/salvedevito-website/static/css/main.4908fd1d.css",
-    "main.js": "/salvedevito-website/static/js/main.91c0143f.js",
+    "main.css": "/salvedevito-website/static/css/main.fcb64387.css",
+    "main.js": "/salvedevito-website/static/js/main.2f598c64.js",
     "static/js/787.919b0ba6.chunk.js": "/salvedevito-website/static/js/787.919b0ba6.chunk.js",
     "static/media/backgroundEdges2.webp": "/salvedevito-website/static/media/backgroundEdges2.531be60f7e8088b8779c.webp",
     "static/media/dashboard.webm": "/salvedevito-website/static/media/dashboard.0c7e561b6c875f568589.webm",
     "static/media/logo.png": "/salvedevito-website/static/media/logo.c5b766283807fdd088ad.png",
     "index.html": "/salvedevito-website/index.html",
-    "main.4908fd1d.css.map": "/salvedevito-website/static/css/main.4908fd1d.css.map",
-    "main.91c0143f.js.map": "/salvedevito-website/static/js/main.91c0143f.js.map",
+    "main.fcb64387.css.map": "/salvedevito-website/static/css/main.fcb64387.css.map",
+    "main.2f598c64.js.map": "/salvedevito-website/static/js/main.2f598c64.js.map",
     "787.919b0ba6.chunk.js.map": "/salvedevito-website/static/js/787.919b0ba6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4908fd1d.css",
-    "static/js/main.91c0143f.js"
+    "static/css/main.fcb64387.css",
+    "static/js/main.2f598c64.js"
   ]
 }
