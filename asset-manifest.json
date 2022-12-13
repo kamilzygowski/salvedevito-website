@@ -1,18 +1,25 @@
 {
   "files": {
-    "main.css": "/salvedevito-website/static/css/main.fcb64387.css",
-    "main.js": "/salvedevito-website/static/js/main.2f598c64.js",
+    "main.css": "/salvedevito-website/static/css/main.7c3730ea.css",
+    "main.js": "/salvedevito-website/static/js/main.c7b2e856.js",
     "static/js/787.919b0ba6.chunk.js": "/salvedevito-website/static/js/787.919b0ba6.chunk.js",
     "static/media/backgroundEdges2.webp": "/salvedevito-website/static/media/backgroundEdges2.531be60f7e8088b8779c.webp",
+    "static/media/d2.webp": "/salvedevito-website/static/media/d2.c6280f4022179835a80c.webp",
     "static/media/dashboard.webm": "/salvedevito-website/static/media/dashboard.0c7e561b6c875f568589.webm",
+    "static/media/d3.webp": "/salvedevito-website/static/media/d3.37aa11b5f0f1aa45d704.webp",
+    "static/media/d1.webp": "/salvedevito-website/static/media/d1.e28b622cf3fd5d18cef8.webp",
+    "static/media/download-pattern.webp": "/salvedevito-website/static/media/download-pattern.76ccbf5bcf6e6c2714ec.webp",
     "static/media/logo.png": "/salvedevito-website/static/media/logo.c5b766283807fdd088ad.png",
+    "static/media/success.webp": "/salvedevito-website/static/media/success.ce5f254bd1df678a1c6d.webp",
+    "static/media/failure.webp": "/salvedevito-website/static/media/failure.345b419803734a74c817.webp",
+    "static/media/empty_eq.webp": "/salvedevito-website/static/media/empty_eq.a8887e0b1df4ebdec0a8.webp",
     "index.html": "/salvedevito-website/index.html",
-    "main.fcb64387.css.map": "/salvedevito-website/static/css/main.fcb64387.css.map",
-    "main.2f598c64.js.map": "/salvedevito-website/static/js/main.2f598c64.js.map",
+    "main.7c3730ea.css.map": "/salvedevito-website/static/css/main.7c3730ea.css.map",
+    "main.c7b2e856.js.map": "/salvedevito-website/static/js/main.c7b2e856.js.map",
     "787.919b0ba6.chunk.js.map": "/salvedevito-website/static/js/787.919b0ba6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fcb64387.css",
-    "static/js/main.2f598c64.js"
+    "static/css/main.7c3730ea.css",
+    "static/js/main.c7b2e856.js"
   ]
 }
